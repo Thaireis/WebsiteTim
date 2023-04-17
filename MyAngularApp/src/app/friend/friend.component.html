@@ -1,0 +1,20 @@
+<p>friend works!</p>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Age</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let friend of friends">
+                <td>{{friend.id}}</td>
+                <td>{{friend.age}}</td>
+                <td>{{friend.name}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
