@@ -1,4 +1,4 @@
 FROM openjdk:11-jre
-COPY target/spring-boot-docker-maven.jar app.jar
+ADD target/spring-boot-docker-maven.jar spring-boot-docker-maven.jar
+ENTRYPOINT ["java", "-jar", "spring-boot-docker-maven.jar"]
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app.jar"]
