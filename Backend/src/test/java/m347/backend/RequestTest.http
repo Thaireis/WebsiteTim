@@ -1,0 +1,34 @@
+# http://localhost:8080/api/v1
+# GET = /friends
+
+GET http://localhost:8080/api/v1/friends
+Accept: application/json
+
+###
+
+# POST =
+
+POST http://localhost:8080/api/v1/add/friend
+Content-Type: application/json
+
+{
+  "id": "5",
+  "name": "Jeff",
+  "age": "24"
+}
+
+###
+
+# DELETE = /id
+
+DELETE http://localhost:8080/api/v1/4
+Accept: application/json
+
+###
+
+# PUT = /id?id=...&name=...&age=...
+
+PUT http://localhost:8080/api/v1/4?id=4&name=Jeffrey&age=39
+Content-Type: application/json
+
+###

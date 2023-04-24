@@ -20,7 +20,7 @@ public class FriendController {
         return friendService.getFriends();
     }
 
-    @PostMapping
+    @PostMapping("/add/friend")
     public void registerNewFriend(@RequestBody Friend friend) {
         friendService.addNewFriend(friend);
     }
