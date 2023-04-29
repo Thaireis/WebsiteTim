@@ -1,4 +1,11 @@
-<p>friend works!</p>
+<a href="/friends/add" role="button" class="btn btn-outline-primary btn-lg btn-block text-center">
+    <span><i class="fa fa-users"></i></span>
+    <br>Add+
+</a>
+<a href="/friends/delete" role="button" class="btn btn-outline-primary btn-lg btn-block text-center">
+    <span><i class="fa fa-users"></i></span>
+    <br>DELETE
+</a>
 <div class="container">
     <table class="table table-striped">
         <thead>
@@ -13,6 +20,7 @@
                 <td>{{friend.id}}</td>
                 <td>{{friend.age}}</td>
                 <td>{{friend.name}}</td>
+                <button type="button" class="btn btn-danger" (click)="deleteFriend(friend.id)">Delete</button>
             </tr>
         </tbody>
     </table>

@@ -7,15 +7,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { FriendComponent } from './friend/friend.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateFriendComponent } from './create-friend/create-friend.component';
+import { UpdateFriendComponent } from './update-friend/update-friend.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'friends', component: FriendComponent },
-  { path: '', component: HomeComponent },
+  { path: 'friends/add', component: CreateFriendComponent },
+  { path: 'friends/update', component: UpdateFriendComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FriendComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    FriendComponent,
+    CreateFriendComponent,
+    UpdateFriendComponent,
+  ],
   imports: [
     BrowserModule,
     NgbModule,

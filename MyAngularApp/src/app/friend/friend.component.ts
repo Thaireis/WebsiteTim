@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-friend',
@@ -9,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class FriendComponent implements OnInit {
   friends: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
     let response = this.http.get('http://localhost:8080/api/v1/friends');
+    response.subscribe((data) => (this.friends = data));
+  }
+
+  deleteFriend(id: number) {
+    let response = this.http.delete('http://localhost:8080/api/v1/' + id);
     response.subscribe((data) => (this.friends = data));
   }
 }
