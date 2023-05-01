@@ -31,11 +31,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_DATABASE: frienddb
-      MYSQL_USER: user
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_PASSWORD: password
-    expose:
-      - 3306
     ports:
       - "3306:3306"
     restart: always
@@ -46,8 +42,6 @@ services:
       - mynet
     container_name: adminer
     image: adminer
-    expose:
-      - 9000
     ports:
       - "9000:8080"
     restart: always

@@ -38,6 +38,7 @@ public class FriendService {
         friendRepository.save(friend);
     }
 
+
     public void deleteFriend(long friendId) {
         boolean exists = friendRepository.existsById(friendId);
         if(!exists) {

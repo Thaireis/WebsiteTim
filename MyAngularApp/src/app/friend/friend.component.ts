@@ -16,9 +16,4 @@ export class FriendComponent implements OnInit {
     let response = this.http.get('http://localhost:8080/api/v1/friends');
     response.subscribe((data) => (this.friends = data));
   }
-
-  deleteFriend(id: number) {
-    let response = this.http.delete('http://localhost:8080/api/v1/' + id);
-    response.subscribe((data) => (this.friends = data));
-  }
 }

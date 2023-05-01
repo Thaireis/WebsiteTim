@@ -9,6 +9,7 @@ import { FriendComponent } from './friend/friend.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateFriendComponent } from './create-friend/create-friend.component';
 import { UpdateFriendComponent } from './update-friend/update-friend.component';
+import { DeleteFriendComponent } from './delete-friend/delete-friend.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'friends', component: FriendComponent },
   { path: 'friends/add', component: CreateFriendComponent },
   { path: 'friends/update', component: UpdateFriendComponent },
+  { path: 'friends/delete', component: DeleteFriendComponent },
 ];
 
 @NgModule({
@@ -25,6 +27,7 @@ const routes: Routes = [
     FriendComponent,
     CreateFriendComponent,
     UpdateFriendComponent,
+    DeleteFriendComponent,
   ],
   imports: [
     BrowserModule,

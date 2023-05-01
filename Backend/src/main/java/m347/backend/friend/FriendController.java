@@ -9,10 +9,12 @@ import java.util.List;
 public class FriendController {
 
     private final FriendService friendService;
+    private final FriendRepository friendRepository;
 
     @Autowired
-    public FriendController(FriendService friendService) {
+    public FriendController(FriendService friendService, FriendRepository friendRepository) {
         this.friendService = friendService;
+        this.friendRepository = friendRepository;
     }
 
     @GetMapping("/friends")
@@ -20,21 +22,28 @@ public class FriendController {
         return friendService.getFriends();
     }
 
-    @PostMapping("/add/friend")
+    /*
+    @PostMapping("/friends/add")
     public void registerNewFriend(@RequestBody Friend friend) {
         friendService.addNewFriend(friend);
     }
+     */
 
-    @DeleteMapping(path = "{friendId}")
-    public void deleteFriend(@PathVariable("friendId") long friendId) {
-        friendService.deleteFriend(friendId);
+    @PostMapping("/friends")
+    Friend newFriend(@RequestBody Friend newFriend) {
+        return friendRepository.save(newFriend);
     }
 
-    @PutMapping(path = "{friendId}")
+    @PutMapping(path = "/friends/{friendId}")
     public void updateFriend(
             @PathVariable("friendId") long friendId,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) int age) {
         friendService.updateFriend(friendId, name, age);
+    }
+
+    @DeleteMapping(path = "/friends/{friendId}")
+    public void deleteFriend(@PathVariable("friendId") long friendId) {
+        friendService.deleteFriend(friendId);
     }
 }
