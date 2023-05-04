@@ -1,5 +1,5 @@
 <div class="container">
-    <form #friendForm="ngForm" (ngSubmit)="onSubmit(friendForm.value)">
+    <form #friendUpdateForm="ngForm" (ngSubmit)="saveUpdate(friendUpdateForm.value)">
         <div class="form-group">
             <label for="age">Age</label>
             <div class="input-group">
@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <div class="input-group">
-                <input type="submit" value="CREATE" class="btn btn-danger createButton">
+                <input type="submit" value="Save" class="btn btn-danger updateButton">
             </div>
         </div>
     </form>

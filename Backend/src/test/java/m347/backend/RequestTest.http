@@ -5,30 +5,28 @@
 GET http://localhost:8080/api/v1/friends
 Accept: application/json
 
+
 ###
-# DELETE = /id
+# DELETE = /friends/id
 
 DELETE http://localhost:8080/api/v1/friends/2
 Accept: application/json
 
-###
-# PUT = /id?id=...&name=...&age=...
 
-PUT http://localhost:8080/api/v1/friends/1?name=Tim&age=40
+###
+# PUT = /friends/id?name=...&age=...
+
+PUT http://localhost:8080/api/v1/friends/20?name=Herbert&age=50
 Content-Type: application/json
 
+
 ###
+# POST = friends/add
 
-
-
-# Doesn't Work :(
-# POST =
-
-POST http://localhost:8080/api/v1/friends
+POST http://localhost:8080/api/v1/friends/add
 Content-Type: application/json
 
 {
-  "id": 0,
-  "name": "JOHNNY SINS",
-  "age": 28
+  "name": "Kenny",
+  "age": 24
 }

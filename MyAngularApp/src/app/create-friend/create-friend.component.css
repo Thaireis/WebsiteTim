@@ -1,0 +1,10 @@
+.createButton {
+    background-color: white;
+    color: black;
+    border: 2px solid #22dd3b;
+}
+
+.createButton:hover {
+    background-color: #22dd3b;
+    color: white;
+}

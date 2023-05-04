@@ -9,21 +9,15 @@ import { Router } from '@angular/router';
 })
 export class UpdateFriendComponent {
   friends: any;
-  url: string;
-  friendid: any;
 
-  constructor(private http: HttpClient, private router: Router) {
-    this.url = 'http://localhost:8080/api/v1/friends/';
-  }
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    let response = this.http.get(this.url);
+    let response = this.http.get('http://localhost:8080/api/v1/friends/');
     response.subscribe((data) => (this.friends = data));
   }
 
-  updatePost(value: any) {
-    let response = this.http.put(this.url, value);
-    response.subscribe((data) => (this.friendid = data));
-    this.router.navigateByUrl('/friends');
+  toUpdateFriend(id: number) {
+    this.router.navigateByUrl('/friends/update/' + id);
   }
 }

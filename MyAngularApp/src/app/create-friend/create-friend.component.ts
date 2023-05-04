@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FriendService } from '../services/friend.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-friend',
@@ -8,7 +8,20 @@ import { FriendService } from '../services/friend.service';
   styleUrls: ['./create-friend.component.css'],
 })
 export class CreateFriendComponent {
-  constructor(private http: HttpClient, public friendService: FriendService) {}
+  friends: any;
 
-  onSubmit() {}
+  constructor(private http: HttpClient, private router: Router) {}
+
+  onSubmit(friend: { name: string; age: number }) {
+    console.log(friend);
+    const headers = new HttpHeaders({ myHeader: 'WebsiteTim' });
+    this.http
+      .post('http://localhost:8080/api/v1/friends/add/', friend, {
+        headers: headers,
+      })
+      .subscribe((data) => {
+        console.log(data);
+      });
+    this.router.navigateByUrl('/home');
+  }
 }

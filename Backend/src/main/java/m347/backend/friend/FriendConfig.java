@@ -19,6 +19,10 @@ public class FriendConfig {
             friendRepository.save(new Friend(0, "Kay", 18));
             friendRepository.save(new Friend(0, "Adrian", 18));
             friendRepository.save(new Friend(0, "Kevin", 18));
+            friendRepository.save(new Friend(0, "Aaron", 17));
+            friendRepository.save(new Friend(0, "Simon", 19));
+            friendRepository.save(new Friend(0, "Sierra", 18));
+            friendRepository.save(new Friend(0, "Liam", 18));
         };
     }
 

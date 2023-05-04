@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateFriendComponent } from './create-friend/create-friend.component';
 import { UpdateFriendComponent } from './update-friend/update-friend.component';
 import { DeleteFriendComponent } from './delete-friend/delete-friend.component';
+import { FormsModule } from '@angular/forms';
+import { UpdateFriendDetailComponent } from './update-friend-detail/update-friend-detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +19,7 @@ const routes: Routes = [
   { path: 'friends', component: FriendComponent },
   { path: 'friends/add', component: CreateFriendComponent },
   { path: 'friends/update', component: UpdateFriendComponent },
+  { path: 'friends/update/:id', component: UpdateFriendDetailComponent },
   { path: 'friends/delete', component: DeleteFriendComponent },
 ];
 
@@ -27,6 +30,7 @@ const routes: Routes = [
     FriendComponent,
     CreateFriendComponent,
     UpdateFriendComponent,
+    UpdateFriendDetailComponent,
     DeleteFriendComponent,
   ],
   imports: [
@@ -35,6 +39,7 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
