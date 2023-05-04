@@ -1,12 +1,11 @@
 # WebsiteTim
 
-I've tried to create a RESTFUL API where you can list all your friends, additionally add new Friends, update and delete them.
-
-So far tho I've only managed to GET and DELETE Friends
+I have created a RESTFUL API where you can list all your friends, additionally add new Friends, update and delete them.
 
 Tools used:
-Angular
-SpringBoot
+Angular: Typescript / HTML / CSS
+SpringBoot: JAVA
+Docker
 MySQL
 
 ## Frontend
@@ -24,11 +23,14 @@ The second one is the exact same but with the backend included.
 And here are the steps you're going to do:
 
 ### 1. Build and Start Database
-docker-compose -f docker-compose.yml up -d
+**docker-compose -f docker-compose.yml up -d**
 
 ### 2. Make sure that the project has the newest JAR File
-mvn clean
-mvn install
+**mvn clean**
+
+**mvn package** or **mvn install**
+
+(If you have this project open in Intellij, then there is a simple Maven Tab where you can click, else you have to use this as a command in a terminal)
 
 ### 3. Override with Spring Boot Backend
 docker-compose -f docker-compose.override.yml up -d
@@ -37,10 +39,10 @@ The Backend is now available here:
 http://localhost:8080/friends
 
 
-If you want to see the Adminer, it's available on http://localhost:9000/ but you need to login first:
+If you want to see the Adminer, it's available on http://localhost:9000/
+but you need to login first:
 
-Server    -   database
-User      -   root
-Password  -   password
-Database  -   frienddb
+| Server   | User | Password | Database |
+|----------|------|----------|----------|
+| database | root | password | frienddb |
 
